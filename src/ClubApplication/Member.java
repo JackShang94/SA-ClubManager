@@ -1,6 +1,5 @@
 package ClubApplication;
 
-
 public class Member extends Person implements Comparable<Member>{
 	private Integer memberNumber;
 
