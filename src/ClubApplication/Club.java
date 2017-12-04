@@ -1,13 +1,11 @@
 package ClubApplication;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.print.attribute.standard.RequestingUserName;
 
 public class Club {
 	private ArrayList<Member> members = new ArrayList<Member>();

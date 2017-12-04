@@ -1,6 +1,5 @@
 package ClubApplication;
 
-import java.util.Comparator;
 
 public class Member extends Person implements Comparable<Member>{
 	private Integer memberNumber;
