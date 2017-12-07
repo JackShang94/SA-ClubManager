@@ -10,6 +10,12 @@ import java.util.List;
 public class Club {
 	private ArrayList<Member> members = new ArrayList<Member>();
 	private HashMap<String, Facility> facilities;
+
+	public Club() {
+		members = new ArrayList<Member>();
+		facilities = new HashMap<String, Facility>();
+	}
+
 	public Member addMember(String surName, String firstName, String secondName) {
 
 		Member member = new Member(surName, firstName, secondName, members.size() + 1);
@@ -53,11 +59,42 @@ public class Club {
 			members.remove(member);
 		}
 	}
-	
-	public  List<Facility> getFacilities() {
+
+	public Facility getFacility(String Name) {
+		return facilities.get(Name);
+
+	}
+
+	public List<Facility> getFacilities() {
 		ArrayList<Facility> result;
 		result = new ArrayList<Facility>(facilities.values());
 		Collections.sort(result);
-		return(result);
+		return (result);
+	}
+
+	public void addFacility(String name, String description) {
+		if (name == null) {
+			return;
+		}
+		Facility f = new Facility(name, description);
+		facilities.put(name, f);
+	}
+
+	public void removeFacility(String name) {
+		facilities.remove(name);
+	}
+
+	public void showFacilities() {
+		Iterator<Facility> i = getFacilities().iterator();
+		while (i.hasNext()) {
+			i.next().show();
+		}
+	}
+	public void show() {
+		System.out.println("Current Members:");
+		showMembers();
+		System.out.println();
+		System.out.println("Facilities:");
+		showFacilities();
 	}
 }

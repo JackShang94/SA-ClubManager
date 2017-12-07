@@ -22,5 +22,4 @@ public class Member extends Person implements Comparable<Member>{
         return (getMemberNumber() - other.getMemberNumber());
     }
 
-
 }
